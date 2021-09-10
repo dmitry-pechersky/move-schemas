@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment {
+       MS_SOURCE_HOST = 'linux02.fly.com'
+    }
     stages {
         stage('Hello') {
             steps {
