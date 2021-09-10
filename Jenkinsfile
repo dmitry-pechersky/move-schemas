@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh 'python3 ./move_schemas.py'
+                sh '. ./init.env'
+                sh 'python3 ./python/move_schemas.py'
             }
         }
     }
