@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Export') {
             steps {
-                sh('python3 ./python/move_schemas.py')
+                sh('python3 ./python/export_schemas.py')
             }
         }
     }
