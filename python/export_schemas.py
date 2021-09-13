@@ -16,8 +16,10 @@ class ODB:
             return res_set[0] == 1
 
 if __name__ == '__main__':
-    print("Hello" + os.environ['EXP_CREDENTIALS_USR'] + 'Hello')
-    print(sys.argv)
+    for i in os.environ['EXP_CREDENTIALS_USR']:
+        print("C" + i)
+    for i in os.environ['EXP_CREDENTIALS_PSW']:
+        print("C" + i)
     """
     source_db = ODB(host=os.environ["MS_SOURCE_HOST"], service_name=os.environ["MS_SOURCE_SERVICE_NAME"], user='jenkins', password='hdd8d83ddef34')
     """
