@@ -1,5 +1,6 @@
 import os
 import cx_Oracle
+import sys
 
 class MSException(Exception):
     pass
@@ -16,6 +17,7 @@ class ODB:
 
 if __name__ == '__main__':
     print("Hello" + os.environ['EXP_CREDENTIALS_USR'] + 'Hello')
+    print(sys.argv)
     schema = os.environ['MS_SCHEMA_NAME']
     source_db = ODB(host=os.environ["MS_SOURCE_HOST"], service_name=os.environ["MS_SOURCE_SERVICE_NAME"], user='jenkins', password='hdd8d83ddef34')
     if not source_db.user_exists(schema):

@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Export') {
             steps {
-                sh('$PYTHON_INTERPRETER ./python/export_schemas.py')
+                sh('$PYTHON_INTERPRETER ./python/export_schemas.py ${EXP_CREDENTIALS_USR} ${EXP_CREDENTIALS_PSW}')
             }
         }
     }
