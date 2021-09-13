@@ -1,13 +1,15 @@
 pipeline {
     agent any
     environment {
-       MS_SOURCE_HOST = 'linux02.fly.com'
-    }
+        EXP_HOST = 'linux02'
+        EXP_SERVICE_NAME = 'db01'
+        EXP_SCHEMAS = 'SIGMA'
+        EXP_CREDENTIALS = credentials('jenkins-aws-secret-key-id')
+    }    
     stages {
-        stage('Hello') {
+        stage('Export') {
             steps {
-                sh '. ./init.env'
-                sh 'python3 ./python/move_schemas.py'
+                sh('python3 ./python/move_schemas.py')
             }
         }
     }
