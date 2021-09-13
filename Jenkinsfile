@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Export') {
             steps {
-                sh '. ./venv/bin/activate'
+                sh '. ~/venv/bin/activate'
                 sh('python3 ./python/export_schemas.py')
             }
         }
