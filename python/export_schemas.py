@@ -19,7 +19,7 @@ class ODB:
 
 def rdbms_export(host, service_name, user, password, schemas, directory):
     subprocess.run(["expdp", f'{user}@"{host}/{service_name}"', f"SCHEMAS={schemas}", "COMPRESSION=ALL", f"DIRECTORY={directory}"],
-                   check=True, text=True, 
+                   check=True, encoding='utf-8', 
                    input=f"{password}\n")
 
 if __name__ == '__main__':
