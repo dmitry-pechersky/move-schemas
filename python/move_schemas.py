@@ -17,6 +17,7 @@ class ODB:
 
     def drop_user_if_exist(self, user):
         if self._user_exist(user):
+            print(f"Droping user {user}")
             self._drop_user(user)
 
     def _file_exist(self, directory, file_name):
@@ -33,6 +34,7 @@ class ODB:
 
     def remove_dump_files_if_exist(self, directory, file_name):
         if self._file_exist(directory, file_name):
+            print(f"Removing file {file_name}")
             self._remove_file(directory, file_name)
 
 def rdbms_dp_export(host, service_name, user, password, schemas, directory):
